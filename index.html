@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -7,13 +8,16 @@
     <meta description="당뇨치료">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-    <title>아리랑한의원</title>
+    <title>당봄한의원</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    
 </head>
 
 <body>
@@ -28,7 +32,9 @@
                 <v-form ref="form" v-model="formValid" style="background-color: #628a34;">
                     <v-row justify="center" align="center" class="mt-10 pa-10">
                         <v-col cols="12" sm="12" md="12">
-                            <span class="display-2 yellow--text darken-1 font-weight-black	">전자책 다운로드 신청하기</span>
+                            <span class="display-2 yellow--text darken-1 font-weight-black hidden-sm-and-down">전자책 다운로드 신청하기</span>
+                            <span class="headline yellow--text darken-1 font-weight-black hidden-md-and-up">전자책 다운로드 신청하기</span>
+
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
                             <span class="headline white--text darken-1">
@@ -45,7 +51,7 @@
 
                     <v-row justify="center" align="center">
 
-                        <div style="background-color: #628a34;">
+                        <div style="background-color: #628a34; padding-bottom:50px; width:80%;">
 
                             <v-row class="ps-10 pe-10">
                                 <v-col cols="12" sm="6" md="6">
@@ -73,7 +79,7 @@
                                 </v-col>
                             </v-row>
 
-                            <v-row class="ps-10 pe-10">
+                            <v-row class="ps-2 pe-2">
                                 <v-col cols="12" sm="4" md="4">
                                     <span class="display-1 white--text "> 신청하는 책</span>
                                 </v-col>
@@ -92,7 +98,7 @@
                             </v-row>
 
 
-                            <v-row class="ps-10 pe-10">
+                            <v-row class="ps-12 pe-12">
                                 <v-col cols="12" sm="8" md="8">
                                     <v-textarea solo height="120" v-model="termDoc">
                                     </v-textarea>
@@ -104,13 +110,13 @@
                                 </v-col>
                             </v-row>
 
-                            <v-row class="ps-10 pe-10">
+                            <v-row class="ps-12 pe-12">
                                 <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
                                     :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
                                 </v-checkbox>
                             </v-row>
 
-                            <v-row class="ps-10 pe-10">
+                            <v-row class="ps-12 pe-12">
                                 <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
                                 </v-checkbox>
                             </v-row>
@@ -122,7 +128,6 @@
                 </v-form>
 
 
-
                 <!-- 상단버튼 -->
                 <div class="pagebtn">
                     <a href="http://www.arirangdm.com/">
@@ -132,17 +137,17 @@
                         <img src="https://globalarirang.github.io/dangbom/img/home2.png">
                     </a>
                 </div>
-                <!-- 상단버튼 -->
+                <!-- 밑에버튼 -->
                 <div class="wishbtn">
                     <img class="wish3" src="https://globalarirang.github.io/dangbom/img/wish1.png">
                     <img class="wish4" src="https://globalarirang.github.io/dangbom/img/wish4.png">
+                    
                     <a href="https://play.google.com/store/apps/details?id=com.tastylife.wishcare&hl=ko">
                         <img src="https://globalarirang.github.io/dangbom/img/wish2.png">
                     </a>
-                    <a
-                        href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762">
-                        <img src="https://globalarirang.github.io/dangbom/img/wish3.png">
 
+                    <a href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762">
+                        <img src="https://globalarirang.github.io/dangbom/img/wish3.png">
                     </a>
                 </div>
 
@@ -183,14 +188,14 @@
                 telRules: [v => !!v || '연락처를 입력해 주세요.(숫자만 입력해주세요.)'],
                 termDoc: `개인정보 취급방침
 ■  수집하는 개인정보의 항목
-아리랑한의원은 홈페이지 회원가입, 상담 및 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+당봄한의원은 홈페이지 회원가입, 상담 및 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
 
--수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 이혜민한의사 상담신청, 아리랑한의원 당뇨소식 수신여부
+-수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 이혜민한의사 상담신청, 당봄한의원 당뇨소식 수신여부
 
 -개인정보 수집방법 : 홈페이지 회원가입, 상담 및 서비스 신청
 
 ■  개인정보의 보유 및 이용기간
-아리랑한의원 (이하 ‘본원' 이라 함)은 귀하의 개인정보보호를 매우 중요시하며, 『개인정보보호법』을 준수하고 있습니다.
+당봄한의원 (이하 ‘본원' 이라 함)은 귀하의 개인정보보호를 매우 중요시하며, 『개인정보보호법』을 준수하고 있습니다.
 ‘본원’은 개인정보처리방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다. 
 이 개인정보처리방침의 순서는 다음과 같습니다.
 
@@ -320,7 +325,7 @@
  본원은 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.
  ■ 개인정보관리책임자 : 손영훈
  ■ 개인정보보호 실무담당자 : 이혜수
- ■ 소속부서 : 아리랑한의원
+ ■ 소속부서 : 당봄한의원
  ■ 전화번호 : 02-959-3396
  ■ 이메일 : globalarirang1@gmail.com
 
@@ -409,73 +414,3 @@
     })
 </script>
 
-<style type="text/css">
-    h1 {
-        font-size: 20px;
-    }
-
-    .container {
-        max-width: 1080px;
-        padding: 0px;
-        margin: 0 auto;
-    }
-
-    .v-messages {
-        min-height: 0px;
-    }
-
-    .progressbar {
-        position: fixed;
-        top: 50%;
-        left: 45%;
-    }
-
-    @media screen and (min-width: 769px) {
-
-        /* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
-        .info {
-            margin-top: 10px;
-            margin-bottom: 150px;
-        }
-    }
-
-    .pagebtn {
-        max-width: 1080px;
-    }
-
-    .pagebtn>a>img {
-        margin: 40px 20px;
-        max-width: 50%;
-    }
-
-    .wishbtn img {
-        margin: 40px 20px;
-    }
-
-    .container>img {
-        width: 100%;
-    }
-
-    .wish4 {
-        display: none;
-    }
-
-    @media only screen and (max-width: 768px) {
-
-        /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
-        .pagebtn {}
-
-        .pagebtn>a>img {
-            margin: 15px 5px;
-            max-width: 45%;
-        }
-
-        .wish3 {
-            display: none;
-        }
-
-        .wish4 {
-            display: block;
-        }
-    }
-</style>
