@@ -1,0 +1,86 @@
+<style type="text/css">
+    h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1080px;
+        padding: 0px;
+        margin: 0 auto;
+    }
+
+    .v-messages {
+        min-height: 0px;
+    }
+
+    .progressbar {
+        position: fixed;
+        top: 50%;
+        left: 45%;
+    }
+
+    @media screen and (min-width: 769px) {
+
+        /* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
+        .info {
+            margin-top: 10px;
+            margin-bottom: 150px;
+        }
+    }
+
+    .pagebtn {
+        max-width: 1080px;
+    }
+
+    .pagebtn>a>img {
+        margin: 40px 20px;
+        max-width: 50%;
+    }
+
+    .wishbtn img {
+        margin: 40px 20px;
+    }
+
+    .container>img {
+        width: 100%;
+    }
+
+    .wish4 {
+        display: none;
+    }
+
+
+
+    @media only screen and (max-width: 768px) {
+
+        /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+        .pagebtn {}
+
+        .pagebtn>a>img {
+            margin: 15px 5px;
+            max-width: 45%;
+        }
+
+        .wish3 {
+            display: none;
+        }
+
+        .wish4 {
+            display: inline-block;
+        }
+
+        .wishbtn img {
+            margin: 10px 20px;
+        }
+
+        .wishbtn>a>img {
+            margin: 15px 5px;
+            max-width: 45%;
+            vertical-align: middle;
+        }
+
+        .col-12{padding:5px 0px;}
+
+
+    }
+</style>
