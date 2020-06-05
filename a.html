@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>당봄한의원</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://globalarirang.github.io/dangbom/css/style.css" />
+
+</head>
+
+<body>
+    <!-- Our application root element -->
+    <div id="app">
+        <b-container>
+            <img src="https://globalarirang.github.io/dangbom/img/1.jpg">
+
+
+            <form style="margin:40px;">
+                <div class="form-row">
+                    <div class="col-md-6 mb-6">
+                        <input type="text" class="form-control is-valid" id="name" placeholder="이름" required>
+                        <div class="valid-feedback">
+                            입력해 주세요.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-6">
+                        <input type="text" class="form-control is-valid" id="tel" placeholder="연락처" required>
+                        <div class="valid-feedback">
+                            입력해 주세요.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                        <label class="form-check-label" for="invalidCheck3">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" value=" Send" class="btn btn-success" id="submit" />button </button>
+
+            </form>
+
+
+
+
+            <!-- 상단버튼 -->
+            <div class="pagebtn">
+                <a href="http://www.arirangdm.com/">
+                    <img src="https://globalarirang.github.io/dangbom/img/home1.png">
+                </a>
+                <a href="http://www.arirangdm.com/myreg/myreg3">
+                    <img src="https://globalarirang.github.io/dangbom/img/home2.png">
+                </a>
+            </div>
+            <!-- 밑에버튼 -->
+            <div class="wishbtn">
+                <img class="wish3" src="https://globalarirang.github.io/dangbom/img/wish1.png">
+                <img class="wish4" src="https://globalarirang.github.io/dangbom/img/wish4.png">
+
+                <a href="https://play.google.com/store/apps/details?id=com.tastylife.wishcare&hl=ko">
+                    <img src="https://globalarirang.github.io/dangbom/img/wish2.png">
+                </a>
+
+                <a
+                    href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762">
+                    <img src="https://globalarirang.github.io/dangbom/img/wish3.png">
+                </a>
+            </div>
+
+            <img src="https://globalarirang.github.io/dangbom/img/6.jpg"></p>
+
+
+    </div>
+    </b-container>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var name = $("#name").val()
+                $.ajax({
+                    type: "POST",
+                    url: "https://us-central1-arirang-event.cloudfunctions.net/post/sendRegData", //process to mail
+                    data: {
+                        message: name
+                    },
+                    // data: $('form.contact').serialize(),
+                    success: function (msg) {
+                        alert("신청되었습니다.")
+                    },
+                    error: function (e) {
+                        alert("에러가 발생했습니다." + e.message);
+                    }
+                });
+            });
+        });
+    </script>
+
+    </div>
+
+
+</body>
+
+</html>
