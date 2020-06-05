@@ -36,12 +36,12 @@
 
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
-                            <span class="headline white--text darken-1">
+                            <span class="title white--text darken-1">
                                 <당뇨발저림 치료집>을 비롯한 전자책 5권
                             </span>
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
-                            <span class="headline white--text darken-1">
+                            <span class="title white--text darken-1">
                                 지금 바로 다운로드 신청하시면 순차적으로 카톡으로 발송해드립니다. ^^
                             </span>
                         </v-col>
@@ -78,12 +78,47 @@
                                 </v-col>
                             </v-row>
 
+                            <v-row class="ps-10 pe-10" justify="center" align="center">
+                                <v-col cols="12" sm="4" md="4">
+                                    <span class="display-1 yellow--text darken-1 font-weight-black"> 신청하는 책</span>
+                                </v-col>
+                            </v-row>
                             <v-row class="ps-10 pe-10 pb-5">
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox1" class="mx-2" :label="`당뇨발저림 치료사례집`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">당뇨발저림 치료사례집</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                    <v-checkbox v-model="checkbox3" class="mx-2"  :label="`당뇨발저림 요당도 치료하자`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">당뇨발저림 요당도 치료하자</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox2" class="mx-2"  :label="`당뇨치료 사례집 I, II`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">당뇨치료 사례집 I, II</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                    <v-checkbox v-model="checkbox4" class="mx-2"  :label="`당뇨초기 혈당잡기`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">당뇨초기 혈당잡기</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                </v-col>
+                            </v-row>
+
+                            <!-- <v-row class="ps-10 pe-10 pb-5">
                                 <v-col cols="12" sm="4" md="4">
                                     <span class="display-1 white--text "> 신청하는 책</span>
                                 </v-col>
                                 <v-col cols="12" sm="4" md="4">
                                     <v-checkbox v-model="checkbox1" :label="`당뇨발저림 치료사례집`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title">당뇨발저림 치료사례집</strong></div>
+                                          </template>
                                     </v-checkbox>
                                     <v-checkbox v-model="checkbox3" :label="`당뇨발저림 요당도 치료하자`" dark>
                                     </v-checkbox>
@@ -94,9 +129,43 @@
                                     <v-checkbox v-model="checkbox4" :label="`당뇨초기 혈당잡기`" dark>
                                     </v-checkbox>
                                 </v-col>
+                            </v-row> -->
+
+
+                            <v-row class="ps-10 pe-10">
+                                <v-col cols="12" sm="12" md="12">
+                                    <span class="display-1 yellow--text darken-1 font-weight-black">개인정보 취급방침</span>
+                                </v-col>
+                                <v-col cols="12" sm="12" md="12">
+                                    <v-textarea solo height="100" v-model="termDoc">
+                                    </v-textarea>
+                                </v-col>
                             </v-row>
 
+                            <v-row class="ps-10 pe-10">
+                                <v-col cols="12" sm="12" md="12">
+                                <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
+                                    :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
+                                </v-checkbox>
+                                <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
+                                </v-checkbox>
+                                </v-col>
+                            </v-row>
 
+                            <v-row class="ps-10 pe-10">
+                                <v-col cols="12" sm="12" md="12">
+                                
+                                </v-col>
+                            </v-row>
+
+                            <v-row class="ps-10 pe-10">
+                            <v-col cols="12" sm="12" md="12">
+                                <v-btn :disabled="!formValid" block class="yellow" height="100" @click="submit">
+                                    <span class="display-1 green--text darken-1">신청
+                                        완료</span></v-btn>
+                            </v-col>
+                            </v-row>
+<!-- 
                             <v-row class="ps-8 pe-8">
                                 <v-col cols="12" sm="8" md="8">
                                     <v-textarea solo height="100" v-model="termDoc">
@@ -118,7 +187,9 @@
                             <v-row class="ps-10 pe-10">
                                 <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
                                 </v-checkbox>
-                            </v-row>
+                            </v-row> -->
+
+                            
 
                         </div>
 
@@ -185,8 +256,7 @@
                 ageList: [],
                 nameRules: [v => !!v || '이름을 입력해 주세요.', v => v.length <= 10 || '10자 이내로 입력해 주세요.'],
                 telRules: [v => !!v || '연락처를 입력해 주세요.(숫자만 입력해주세요.)'],
-                termDoc: `개인정보 취급방침
-■  수집하는 개인정보의 항목
+                termDoc: `■  수집하는 개인정보의 항목
 당봄한의원은 홈페이지 회원가입, 상담 및 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
 
 -수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 이혜민한의사 상담신청, 당봄한의원 당뇨소식 수신여부
