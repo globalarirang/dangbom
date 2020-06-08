@@ -19,6 +19,8 @@
         left: 45%;
     }
 
+
+
     @media screen and (min-width: 769px) {
 
         /* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
@@ -48,6 +50,8 @@
     .wish4 {
         display: none;
     }
+
+    .img2 {display:none;}
 
 
 
@@ -81,6 +85,11 @@
         }
 
         .col-12{padding:5px 0px;}
+
+        
+
+        .img1 {display:none;}
+        .img2 {display:inline-block;}
 
 
     }
