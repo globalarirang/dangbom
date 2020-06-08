@@ -25,7 +25,8 @@
 
             <div class="container" style="text-align: center;">
 
-                <img src="https://globalarirang.github.io/dangbom/img/1.jpg">
+                <img class="img1" src="https://globalarirang.github.io/dangbom/img/1.jpg">
+                <img class="img2" src="https://globalarirang.github.io/dangbom/img/1-2.png">
 
                 <!-- form 정의 -->
                 <v-form ref="form" v-model="formValid" style="background-color: #628a34;">
@@ -160,8 +161,8 @@
 
                             <v-row class="ps-10 pe-10">
                             <v-col cols="12" sm="12" md="12">
-                                <v-btn :disabled="!formValid" block class="yellow" height="100" @click="submit">
-                                    <span class="display-1 green--text darken-1">신청
+                                <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
+                                    <span class="display-1 yellow--text darken-1 font-weight-black">신청
                                         완료</span></v-btn>
                             </v-col>
                             </v-row>
