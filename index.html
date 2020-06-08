@@ -15,8 +15,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        // alert("이 페이지는 크롬, 엣지 브라우저에서 정상작동합니다.");
 
-    
+        var agent = navigator.userAgent.toLowerCase();
+
+        if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf(
+                "msie") != -1)) {
+
+            alert("이 페이지는 크롬, 엣지 브라우저에 최적화되어있습니다.");
+
+        }
+    </script>
+
 </head>
 
 <body>
@@ -32,8 +43,10 @@
                 <v-form ref="form" v-model="formValid" style="background-color: #628a34;">
                     <v-row justify="center" align="center" class="ps-7 pe-7 pt-10 pb-5">
                         <v-col cols="12" sm="12" md="12">
-                            <span class="display-2 yellow--text darken-1 font-weight-black hidden-sm-and-down">전자책 다운로드 신청하기</span>
-                            <span class="display-1 yellow--text darken-1 font-weight-black hidden-md-and-up" style="padding-bottom:20px;">전자책 다운로드 신청하기</span>
+                            <span class="display-2 yellow--text darken-1 font-weight-black hidden-sm-and-down">전자책 다운로드
+                                신청하기</span>
+                            <span class="display-1 yellow--text darken-1 font-weight-black hidden-md-and-up"
+                                style="padding-bottom:20px;">전자책 다운로드 신청하기</span>
 
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
@@ -91,19 +104,19 @@
                                             <div><strong class="title white--text">당뇨발저림 치료사례집</strong></div>
                                         </template>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox3" class="mx-2"  :label="`당뇨발저림 요당도 치료하자`" dark>
+                                    <v-checkbox v-model="checkbox3" class="mx-2" :label="`당뇨발저림 요당도 치료하자`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨발저림 요당도 치료하자</strong></div>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox2" class="mx-2"  :label="`당뇨치료 사례집 I, II`" dark>
+                                    <v-checkbox v-model="checkbox2" class="mx-2" :label="`당뇨치료 사례집 I, II`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨치료 사례집 I, II</strong></div>
                                         </template>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox4" class="mx-2"  :label="`당뇨초기 혈당잡기`" dark>
+                                    <v-checkbox v-model="checkbox4" class="mx-2" :label="`당뇨초기 혈당잡기`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨초기 혈당잡기</strong></div>
                                         </template>
@@ -145,28 +158,28 @@
 
                             <v-row class="ps-10 pe-10">
                                 <v-col cols="12" sm="12" md="12">
-                                <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
-                                    :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
-                                </v-checkbox>
-                                <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
-                                </v-checkbox>
+                                    <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
+                                        :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
+                                    </v-checkbox>
+                                    <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
+                                    </v-checkbox>
                                 </v-col>
                             </v-row>
 
                             <v-row class="ps-10 pe-10">
                                 <v-col cols="12" sm="12" md="12">
-                                
+
                                 </v-col>
                             </v-row>
 
                             <v-row class="ps-10 pe-10">
-                            <v-col cols="12" sm="12" md="12">
-                                <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
-                                    <span class="display-1 yellow--text darken-1 font-weight-black">신청
-                                        완료</span></v-btn>
-                            </v-col>
+                                <v-col cols="12" sm="12" md="12">
+                                    <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
+                                        <span class="display-1 yellow--text darken-1 font-weight-black">신청
+                                            완료</span></v-btn>
+                                </v-col>
                             </v-row>
-<!-- 
+                            <!-- 
                             <v-row class="ps-8 pe-8">
                                 <v-col cols="12" sm="8" md="8">
                                     <v-textarea solo height="100" v-model="termDoc">
@@ -190,7 +203,7 @@
                                 </v-checkbox>
                             </v-row> -->
 
-                            
+
 
                         </div>
 
@@ -212,12 +225,13 @@
                 <div class="wishbtn">
                     <img class="wish3" src="https://globalarirang.github.io/dangbom/img/wish1.png">
                     <img class="wish4" src="https://globalarirang.github.io/dangbom/img/wish4.png">
-                    
+
                     <a href="https://play.google.com/store/apps/details?id=com.tastylife.wishcare&hl=ko">
                         <img src="https://globalarirang.github.io/dangbom/img/wish2.png">
                     </a>
 
-                    <a href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762">
+                    <a
+                        href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762">
                         <img src="https://globalarirang.github.io/dangbom/img/wish3.png">
                     </a>
                 </div>
@@ -483,4 +497,3 @@
         }
     })
 </script>
-
