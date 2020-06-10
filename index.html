@@ -35,10 +35,15 @@
         <v-app>
 
             <div class="container" style="text-align: center;">
-
-                <img class="img1" src="https://globalarirang.github.io/dangbom/img/1.jpg">
-                <img class="img2" src="https://globalarirang.github.io/dangbom/img/1-2.png">
-
+                <div class="img1 wid100">
+                    <img src="https://globalarirang.github.io/dangbom/img/pc1.png">
+                    <img src="https://globalarirang.github.io/dangbom/img/pc2.png">
+                    <img src="https://globalarirang.github.io/dangbom/img/pc3.png">
+                </div>
+                <div class="img2 wid100">
+                    <img src="https://globalarirang.github.io/dangbom/img/mo1.png">
+                    <img src="https://globalarirang.github.io/dangbom/img/mo2.png">
+                    <img src="https://globalarirang.github.io/dangbom/img/mo3.png"> </div>
                 <!-- form 정의 -->
                 <v-form ref="form" v-model="formValid" style="background-color: #628a34;">
                     <v-row justify="center" align="center" class="ps-7 pe-7 pt-10 pb-5">
@@ -79,7 +84,7 @@
 
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
-                                    <v-select solo :items="ageList" label="나이" required
+                                    <v-select solo :items="ageList" label="나이" required v-model="age"
                                         :rules="[v => !!v || '선택해 주세요.']">
                                     </v-select>
 
@@ -175,7 +180,8 @@
                                     <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
                                         :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`" dark>
+                                    <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
+                                        dark>
                                     </v-checkbox>
                                 </v-col>
                             </v-row>
@@ -244,8 +250,12 @@
                         <img src="https://globalarirang.github.io/dangbom/img/wish3.png">
                     </a>
                 </div>
-
-                <img src="https://globalarirang.github.io/dangbom/img/6.jpg"></p>
+                <div class="wid100">
+                    <a href="http://www.arirangdm.com">
+                        <img src="https://globalarirang.github.io/dangbom/img/pc4.png">
+                    </a>
+                </div>
+                </p>
 
 
             </div>
