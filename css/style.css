@@ -18,7 +18,13 @@
     left: 45%;
 }
 
-.v-text-field__details{display: none;}
+.v-text-field__details {
+    display: none;
+}
+
+.wid100 img {
+    width: 100%;
+}
 
 
 
@@ -44,9 +50,7 @@
     margin: 40px 20px;
 }
 
-.container>img {
-    width: 100%;
-}
+
 
 .wish4 {
     display: none;
