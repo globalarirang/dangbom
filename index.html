@@ -183,8 +183,12 @@
                                     <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
                                         dark>
                                     </v-checkbox>
+                                    <v-checkbox v-model="checkbox6" :label="`당봄한의원 진료안내 수신여부`"
+                                        dark>
+                                    </v-checkbox>
                                 </v-col>
                             </v-row>
+                            
 
 
                             <v-row class="ps-10 pe-10">
@@ -494,10 +498,11 @@
                 var checkbox3 = "3. 당뇨발저림 요당도 치료하자 : " + this.checkbox3 + "\n"
                 var checkbox4 = "4. 당뇨초기 혈당잡기 : " + this.checkbox4 + "\n"
                 var checkbox5 = "5. 당뇨소식 수신여부 : " + this.checkbox5 + "\n"
+                var checkbox6 = "6. 당봄한의원 진료안내 수신여부 : " + this.checkbox6 + "\n"
 
                 var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + " ■ " + checkbox1 +
                     " ■ " +
-                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5
+                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + " ■ " + checkbox6
 
                 //## 해당 url로 전달하기       
                 axios.post('https://us-central1-arirang-event.cloudfunctions.net/post/sendRegData', {
