@@ -45,7 +45,7 @@
                     <img src="https://globalarirang.github.io/dangbom/img/mo2.png">
                     <img src="https://globalarirang.github.io/dangbom/img/mo3.png"> </div>
                 <!-- form 정의 -->
-                <v-form ref="form" v-model="formValid" style="background-color: #628a34;">
+                <v-form ref="form" v-model="formValid" style="background-color: #421869;">
                     <v-row justify="center" align="center" class="ps-7 pe-7 pt-10 pb-5">
                         <v-col cols="12" sm="12" md="12" style="margin-bottom:20px;">
                             <span class="display-1 yellow--text darken-1 font-weight-black hidden-sm-and-down">전자책 다운로드
@@ -56,10 +56,10 @@
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
                             <span class="title white--text darken-1 hidden-sm-and-down">
-                                <당뇨발저림 치료집>을 비롯한 전자책 5권
+                                <마른당뇨 치료집>을 비롯한 전자책 5권
                             </span>
                             <span class="subtitle-1 white--text darken-1 hidden-md-and-up">
-                                <당뇨발저림 치료집>을 비롯한 전자책 5권
+                                <마른당뇨 치료집>을 비롯한 전자책 5권
                             </span>
                         </v-col>
 
@@ -76,7 +76,7 @@
 
                     <v-row justify="center" align="center">
 
-                        <div style="background-color: #628a34; padding-bottom:50px; width:80%;">
+                        <div style="background-color: #421869; padding-bottom:50px; width:80%;">
 
                             <v-row class="ps-10 pe-10">
                                 <v-col cols="12" sm="6" md="6">
@@ -126,24 +126,32 @@
                             </v-row>
                             <v-row class="ps-5 pe-5 pb-5">
                                 <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox1" class="mx-2" :label="`당뇨발저림 치료사례집`" dark>
+                                    <v-checkbox v-model="checkbox1" class="mx-2" :label="`마른당뇨 치료사례집`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">마른당뇨 치료사례집</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                    <v-checkbox v-model="checkbox2" class="mx-2" :label="`당뇨발저림 치료사례집`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨발저림 치료사례집</strong></div>
                                         </template>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox3" class="mx-2" :label="`당뇨발저림 요당도 치료하자`" dark>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox3" class="mx-2" :label="`당뇨치료 사례집 I, II`" dark>
+                                        <template v-slot:label>
+                                            <div><strong class="title white--text">당뇨치료 사례집 I, II</strong></div>
+                                        </template>
+                                    </v-checkbox>
+                                    <v-checkbox v-model="checkbox4" class="mx-2" :label="`당뇨발저림 요당도 치료하자`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨발저림 요당도 치료하자</strong></div>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox2" class="mx-2" :label="`당뇨치료 사례집 I, II`" dark>
-                                        <template v-slot:label>
-                                            <div><strong class="title white--text">당뇨치료 사례집 I, II</strong></div>
-                                        </template>
-                                    </v-checkbox>
-                                    <v-checkbox v-model="checkbox4" class="mx-2" :label="`당뇨초기 혈당잡기`" dark>
+
+                                    <v-checkbox v-model="checkbox5" class="mx-2" :label="`당뇨초기 혈당잡기`" dark>
                                         <template v-slot:label>
                                             <div><strong class="title white--text">당뇨초기 혈당잡기</strong></div>
                                         </template>
@@ -169,10 +177,10 @@
                                     <v-checkbox v-model="checkbox9" :label="`개인정보 취급방침에 동의합니다.`"
                                         :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox5" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
+                                    <v-checkbox v-model="checkbox6" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
                                         dark>
                                     </v-checkbox>
-                                    <v-checkbox v-model="checkbox6" :label="`당봄한의원 진료안내 수신여부`" dark>
+                                    <v-checkbox v-model="checkbox7" :label="`당봄한의원 진료안내 수신여부`" dark>
                                     </v-checkbox>
                                 </v-col>
                             </v-row>
@@ -243,11 +251,13 @@
         vuetify: new Vuetify(),
         data() {
             return {
-                checkbox1: false, //## 당뇨발저림 치료사례집
-                checkbox2: false, //## 당뇨치료 사례집 I, II
-                checkbox3: false, //## 당뇨발저림 요당도 치료하자
-                checkbox4: false, //## 당뇨초기 혈당잡기
-                checkbox5: false, //## 당뇨소식 수신여부
+                checkbox1: false, //## 마른당뇨 치료사례집
+                checkbox2: false, //## 당뇨발저림 치료사례집
+                checkbox3: false, //## 당뇨치료 사례집 I, II
+                checkbox4: false, //## 당뇨발저림 요당도 치료하자
+                checkbox5: false, //## 당뇨초기 혈당잡기
+                checkbox6: false, //## 당뇨소식 수신여부
+                checkbox7: false, //## 당봄한의원 진료안내 수신여부
                 checkbox9: false, //## 개인정보 취급방침
                 formValid: false,
                 name: '',
@@ -433,12 +443,13 @@
                 this.tel = ''
                 this.sex = ''
                 this.age = ''
-                this.checkbox1 = false //## 당뇨발저림 치료사례집
-                this.checkbox2 = false //## 당뇨치료 사례집 I, II
-                this.checkbox3 = false //## 당뇨발저림 요당도 치료하자
-                this.checkbox4 = false //## 당뇨초기 혈당잡기
-                this.checkbox5 = false //## 당뇨소식 수신여부
-                this.checkbox6 = false //## 당봄한의원 진료안내 수신여부
+                this.checkbox1 = false //## 마른당뇨 치료사례집
+                this.checkbox2 = false //## 당뇨발저림 치료사례집
+                this.checkbox3 = false //## 당뇨치료 사례집 I, II
+                this.checkbox4 = false //## 당뇨발저림 요당도 치료하자
+                this.checkbox5 = false //## 당뇨초기 혈당잡기
+                this.checkbox6 = false //## 당뇨소식 수신여부
+                this.checkbox7 = false //## 당봄한의원 진료안내 수신여부
                 this.checkbox9 = false //## 개인정보 취급방침
 
                 //## 입력값 유효성 확인
@@ -457,18 +468,19 @@
                 var tel = "연락처:" + this.tel + "\n"
                 var sex = "성별:" + this.sex + "\n"
                 var age = "나이:" + this.age + "\n"
-                var checkbox1 = "1. 당뇨발저림 치료사례집 : " + this.checkbox1 + "\n"
-                var checkbox2 = "2. 당뇨치료 사례집 I, II : " + this.checkbox2 + "\n"
-                var checkbox3 = "3. 당뇨발저림 요당도 치료하자 : " + this.checkbox3 + "\n"
-                var checkbox4 = "4. 당뇨초기 혈당잡기 : " + this.checkbox4 + "\n"
-                var checkbox5 = "5. 당뇨소식 수신여부 : " + this.checkbox5 + "\n"
-                var checkbox6 = "6. 당봄한의원 진료안내 수신여부 : " + this.checkbox6 + "\n"
-                var receive = "7. 전자책 수령방법 : " + this.receive + "\n"
-                var email = "8. 이메일 : " + this.email + "\n"
+                var checkbox1 = "1. 마른당뇨 치료사례집 : " + this.checkbox1 + "\n"
+                var checkbox2 = "2. 당뇨발저림 치료사례집 : " + this.checkbox2 + "\n"
+                var checkbox3 = "3. 당뇨치료 사례집 I, II : " + this.checkbox3 + "\n"
+                var checkbox4 = "4. 당뇨발저림 요당도 치료하자 : " + this.checkbox4 + "\n"
+                var checkbox5 = "5. 당뇨초기 혈당잡기 : " + this.checkbox5 + "\n"
+                var checkbox6 = "6. 당뇨소식 수신여부 : " + this.checkbox6 + "\n"
+                var checkbox7 = "7. 당봄한의원 진료안내 수신여부 : " + this.checkbox7 + "\n"
+                var receive = "8. 전자책 수령방법 : " + this.receive + "\n"
+                var email = "9. 이메일 : " + this.email + "\n"
 
                 var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + " ■ " + checkbox1 +
                     " ■ " +
-                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + " ■ " + checkbox6 + " ■ " + receive+ " ■ " + email
+                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + receive+ " ■ " + email
 
                     
 
