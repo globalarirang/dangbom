@@ -38,15 +38,13 @@
         <v-app>
 
             <div class="container" style="text-align: center;">
-                <div class="img1 wid100">
-                    <img src="https://globalarirang.github.io/dangbom/img/pc1.png">
-                    <img src="https://globalarirang.github.io/dangbom/img/pc2.png">
-                    <img src="https://globalarirang.github.io/dangbom/img/pc3.png">
+                 <div class="img1 wid100">
+                    <img src="https://globalarirang.github.io/dangbom/img/pc_20201116.jpeg">
                 </div>
                 <div class="img2 wid100">
-                    <img src="https://globalarirang.github.io/dangbom/img/mo1.png">
-                    <img src="https://globalarirang.github.io/dangbom/img/mo2.png">
-                    <img src="https://globalarirang.github.io/dangbom/img/mo3.png"> </div>
+                     <img src="https://globalarirang.github.io/dangbom/img/mobile_20201116.png">
+                </div>
+            
                 <!-- form 정의 -->
                 <v-form ref="form" v-model="formValid" style="background-color: #421869;">
                     <v-row justify="center" align="center" class="ps-7 pe-7 pt-10 pb-5">
@@ -127,36 +125,50 @@
                                         style="padding-bottom:20px;">신청하는 책</span>
                                 </v-col>
                             </v-row>
-                            <v-row class="ps-5 pe-5 pb-5">
+                            <v-row class="ps-5 pe-5">
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox10" class="mx-2" :label="`당뇨피부 가려움증 한방치료사례집`" dark>
+                                        <template v-slot:label>
+                                            <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
+                                        </template>
+                                    </v-checkbox>
+                                </v-col>
                                 <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox1" class="mx-2" :label="`마른당뇨 치료사례집`" dark>
                                         <template v-slot:label>
-                                            <div><strong class="title white--text">마른당뇨 치료사례집</strong></div>
+                                            <strong class="title white--text">마른당뇨 치료사례집</strong>
                                         </template>
                                     </v-checkbox>
+                                </v-col>
+                                </v-row>
+                             <v-row class="ps-5 pe-5">
+                                <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox2" class="mx-2" :label="`당뇨발저림 치료사례집`" dark>
                                         <template v-slot:label>
-                                            <div><strong class="title white--text">당뇨발저림 치료사례집</strong></div>
+                                            <strong class="title white--text">당뇨발저림 치료사례집</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox3" class="mx-2" :label="`당뇨치료 사례집 I, II`" dark>
                                         <template v-slot:label>
-                                            <div><strong class="title white--text">당뇨치료 사례집 I, II</strong></div>
+                                            <strong class="title white--text">당뇨치료 사례집 I, II</strong>
                                         </template>
                                     </v-checkbox>
+                                </v-col>
+                                </v-row>
+                             <v-row class="ps-5 pe-5">
+                                <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox4" class="mx-2" :label="`당뇨발저림 요당도 치료하자`" dark>
                                         <template v-slot:label>
-                                            <div><strong class="title white--text">당뇨발저림 요당도 치료하자</strong></div>
+                                            <strong class="title white--text">당뇨발저림 요당도 치료하자</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
-
                                     <v-checkbox v-model="checkbox5" class="mx-2" :label="`당뇨초기 혈당잡기`" dark>
                                         <template v-slot:label>
-                                            <div><strong class="title white--text">당뇨초기 혈당잡기</strong></div>
+                                            <strong class="title white--text">당뇨초기 혈당잡기</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
@@ -262,6 +274,7 @@
                 checkbox6: false, //## 당뇨소식 수신여부
                 checkbox7: false, //## 당봄한의원 진료안내 수신여부
                 checkbox9: false, //## 개인정보 취급방침
+                checkbox10: false,//## 당뇨피부 가려움증 치료사례집
                 formValid: false,
                 name: '',
                 tel: '',
@@ -454,6 +467,8 @@
                 this.checkbox6 = false //## 당뇨소식 수신여부
                 this.checkbox7 = false //## 당봄한의원 진료안내 수신여부
                 this.checkbox9 = false //## 개인정보 취급방침
+                this.checkbox10 = false //## 당뇨피부 가려움증 치료사례집
+
 
                 //## 입력값 유효성 확인
                 this.$refs.form.validate()
@@ -476,17 +491,16 @@
                 var checkbox3 = "3. 당뇨치료 사례집 I, II : " + this.checkbox3 + "\n"
                 var checkbox4 = "4. 당뇨발저림 요당도 치료하자 : " + this.checkbox4 + "\n"
                 var checkbox5 = "5. 당뇨초기 혈당잡기 : " + this.checkbox5 + "\n"
-                var checkbox6 = "6. 당뇨소식 수신여부 : " + this.checkbox6 + "\n"
-                var checkbox7 = "7. 당봄한의원 진료안내 수신여부 : " + this.checkbox7 + "\n"
-                var receive = "8. 전자책 수령방법 : " + this.receive + "\n"
-                var email = "9. 이메일 : " + this.email + "\n"
+                var checkbox10 = "6. 당뇨피부 가려움증 치료사례집 : " + this.checkbox10 + "\n"
+                var checkbox6 = "# 당뇨소식 수신여부 : " + this.checkbox6 + "\n"
+                var checkbox7 = "# 당봄한의원 진료안내 수신여부 : " + this.checkbox7 + "\n"
+                var receive = "# 전자책 수령방법 : " + this.receive + "\n"
+                var email = "# 이메일 : " + this.email + "\n"
 
-                var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + " ■ " + checkbox1 +
-                    " ■ " +
-                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + receive+ " ■ " + email
+                var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + " ■ " + checkbox1 + " ■ " +
+                    checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 +" ■ " + checkbox10 + " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + receive+ " ■ " + email
 
                     
-
                 //## 해당 url로 전달하기       
                 axios.post('https://us-central1-arirang-event.cloudfunctions.net/post/sendRegData', {
                     message: submitMessage,
