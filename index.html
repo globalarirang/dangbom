@@ -66,10 +66,10 @@
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
                             <span class="title white--text darken-1 hidden-sm-and-down">
-                                <이혜민한의사의 당뇨치료사례집2>을 비롯한 전자책 9권 
+                                <비만당뇨 한방치료사례집>을 비롯한 전자책 11권 
                             </span>
                             <span class="subtitle-1 white--text darken-1 hidden-md-and-up">
-                                <이혜민한의사의 당뇨치료사례집2>을 비롯한 전자책 9권 
+                                <비만당뇨 한방치료사례집>을 비롯한 전자책 11권 
                             </span>
                         </v-col>
 
@@ -130,21 +130,21 @@
                             </v-row>
 
                             <v-row class="ps-10 pe-10">
-                                 <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox2" class="mx-2" dark>
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox8" class="mx-2" dark>
                                         <template v-slot:label>
-                                            <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
+                                            <strong class="title white--text">비만당뇨 한방치료사례집</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
-                                 <v-col cols="12" sm="6" md="6">
+                                <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox1" class="mx-2" dark>
                                         <template v-slot:label>
                                             <strong class="title white--text">마른당뇨 한방치료사례집</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
-                                    <v-col cols="12" sm="6" md="6">
+                                <v-col cols="12" sm="6" md="6">
                                     <v-checkbox v-model="checkbox3" class="mx-2" dark>
                                         <template v-slot:label>
                                             <strong class="title white--text">당뇨치료 사례집 I, II</strong>
@@ -152,16 +152,16 @@
                                     </v-checkbox>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox7" class="mx-2"  dark>
+                                    <v-checkbox v-model="checkbox2" class="mx-2" dark>
                                         <template v-slot:label>
-                                            <strong class="title white--text">당뇨불면증 한방치료사례집</strong>
+                                            <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
-                                <v-col cols="12" sm="6" md="6">
-                                    <v-checkbox v-model="checkbox6" class="mx-2"  dark>
+                                 <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox9" class="mx-2" dark>
                                         <template v-slot:label>
-                                            <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
+                                            <strong class="title white--text">초기당뇨 한방치료사례집</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
@@ -169,6 +169,20 @@
                                     <v-checkbox v-model="checkbox5" class="mx-2" dark>
                                         <template v-slot:label>
                                             <strong class="title white--text">당뇨초기 혈당잡기</strong>
+                                        </template>
+                                    </v-checkbox>
+                                </v-col>
+                                 <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox6" class="mx-2"  dark>
+                                        <template v-slot:label>
+                                            <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
+                                        </template>
+                                    </v-checkbox>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                    <v-checkbox v-model="checkbox7" class="mx-2"  dark>
+                                        <template v-slot:label>
+                                            <strong class="title white--text">당뇨불면증 한방치료사례집</strong>
                                         </template>
                                     </v-checkbox>
                                 </v-col>
@@ -274,8 +288,10 @@
                 checkbox3: false, //## 당뇨치료 사례집 I, II
                 checkbox4: false, //## 당뇨발저림 요당도 치료하자
                 checkbox5: false, //## 당뇨초기 혈당잡기
-                checkbox6: false,//## 당뇨피부 가려움증 치료사례집
-                checkbox7: false,//## 당뇨 불면증 한방치료사례집
+                checkbox6: false, //## 당뇨피부 가려움증 치료사례집
+                checkbox7: false, //## 당뇨 불면증 한방치료사례집
+                checkbox8: false, //## 비만당뇨 한방치료사례집
+                checkbox9: false, //## 초기당뇨 한방치료사례집
                 formValid: false,
                 name: '',
                 tel: '',
@@ -463,6 +479,8 @@
                 this.checkbox5 = false //## 당뇨초기 혈당잡기
                 this.checkbox6 = false //## 당뇨피부 가려움증 치료사례집
                 this.checkbox7 = false //## 당뇨 불면증 한방치료사례집
+                this.checkbox8 = false //## 비만당뇨 한방치료사례집
+                this.checkbox9 = false //## 초기당뇨 한방치료사례집
 
 
                 //## 입력값 유효성 확인
@@ -487,12 +505,15 @@
                 var checkbox5 = "5. 당뇨초기 혈당잡기 : " + this.checkbox5 + "\n"
                 var checkbox6 = "6. 당뇨피부 가려움증 치료사례집 : " + this.checkbox6 + "\n"
                 var checkbox7 = "7. 당뇨 불면증 한방치료사례집 : " + this.checkbox7 + "\n"
+                var checkbox8 = "8. 비만당뇨 한방치료사례집 : " + this.checkbox8 + "\n"
+                var checkbox9 = "9. 초기당뇨 한방치료사례집 : " + this.checkbox9 + "\n"
                 var checkboxRecevie01 = "# 당뇨소식 수신여부 : " + this.checkboxRecevie01 + "\n"
                 var checkboxRecevie02 = "# 당봄한의원 진료안내 수신여부 : " + this.checkboxRecevie02 + "\n"
                 var receive = "# 전자책 수령방법 : " + this.receive + "\n"
                 var email = "# 이메일 : " + this.email + "\n"
                 var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + 
-                                    " ■ " + checkbox1 +  " ■ " + checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + " ■ " + checkbox6 + " ■ " + checkbox7 + 
+                                    " ■ " + checkbox1 + " ■ " + checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + 
+                                    " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + checkbox8 + " ■ " + checkbox9 + 
                                     " ■ " + checkboxRecevie01 + " ■ " + checkboxRecevie02 + " ■ " + receive+ " ■ " + email
 
                 //## 해당 url로 전달하기       
