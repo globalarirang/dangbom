@@ -517,7 +517,7 @@
                                     " ■ " + checkboxRecevie01 + " ■ " + checkboxRecevie02 + " ■ " + receive+ " ■ " + email
 
                 //## 해당 url로 전달하기       
-                axios.post('https://us-central1-arirang-event.cloudfunctions.net/post/sendRegData', {
+                axios.post('https://asia-northeast1-arirang-event.cloudfunctions.net/email/sendRegData', {
                     message: submitMessage,
                 }).then(response => {
                     if (response.status == 200) {
