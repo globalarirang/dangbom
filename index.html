@@ -58,184 +58,187 @@
     <div id="app">
         <v-app>
             <div class="container" style="text-align: center;">
-                <!-- 메인이미지 -->
-                <v-row justify="center">
-                    <v-col>
-                        <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010101.png">
-                    </v-col>
-                     <v-col>
-                        <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010102.png">
-                    </v-col>
-                     <v-col>
-                        <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010103.png">
-                    </v-col>
-                </v-row>
-               
-                <!-- form 정의 -->
-                <v-form ref="form" v-model="formValid"  class="mt-2" style="background-color: #421869;">
-                    <v-row justify="center" align="center" class="py-5 px-2">
-                        <v-col cols="12"  style="margin-bottom:20px;" class="display-1 yellow--text darken-1 font-weight-black">
-                            전자책 다운로드<br>신청하기!
+                <div> <!-- 메인이미지 -->
+                    <v-row justify="center">
+                        <v-col>
+                            <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010101.png">
                         </v-col>
-                        <v-col cols="12" class="title white--text darken-1">
-                            <말초신경병증 이제 치료합시다.><br>
-                            을 비롯한 전자책 14권                          
+                        <v-col>
+                            <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010102.png">
                         </v-col>
-                        <v-col cols="12" class="title white--text darken-1">
-                            지금 바로 다운로드 신청하시면 순차적으로 <br>
-                            카톡이나 이메일로 발송해드립니다. ^^
+                        <v-col>
+                            <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010103.png">
                         </v-col>
                     </v-row>
-
-                    <!-- 이름, 나이, 성별, 연락처, 전자책 선택 -->
-                    <v-row justify="center" align="center" class="px-10">
-                        <v-col cols="12" sm="6" md="6">
-                            <v-text-field solo label="이름" required v-model="name" :rules="nameRules">
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-text-field solo label="나이" required v-model="age">
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-select solo :items="['남', '여']" label="성별" required v-model="sex"
-                                :rules="[v => !!v || '선택해 주세요.']">
-                            </v-select>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-text-field solo label="연락처" required v-model="tel" :rules="telRules"
-                                mask="###########">
-                            </v-text-field>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-select solo :items="['카카오톡', '이메일']" label="전자책 수령방법" required v-model="receive"
-                                :rules="[v => !!v || '선택해 주세요.']">
-                            </v-select>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6" style="margin-bottom:20px;">
-                            <v-text-field v-show = "receive === '이메일' ? true:false" solo label="이메일을 적어주세요" v-model="email">
-                            </v-text-field>
-                        </v-col>
-                    </v-row>
-
-                    <v-row class="display-1 yellow--text darken-1 font-weight-black" justify="center">
-                        신청하는 책
-                    </v-row>
-
-                    <v-row class="px-10" >
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox12" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">말초신경병증 이제 치료합시다.</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox2" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                            <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox8" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">비만당뇨 한방치료사례집</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                            <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox1" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">마른당뇨 한방치료사례집</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox10" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨약 끊기 당신도 가능합니다.</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox11" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">공복혈당 당뇨약없이 낮추는법</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox9" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">초기당뇨 한방치료사례집</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox5" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨초기 혈당잡기</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox3" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨치료 사례집 I, II</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>         
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox4" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨발저림 요당도 치료하자</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                            <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox6" class="mx-2"  dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox7" class="mx-2"  dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">당뇨불면증 한방치료사례집</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                    </v-row>
-
-                    <v-row justify="center" class="mb-5 display-1 yellow--text darken-1 font-weight-black">
-                        개인정보 취급방침
-                    </v-row>
-
-                    <v-row justify="center" class="px-10">
-                        <v-textarea solo height="100" v-model="termDoc"/>
-                    </v-row>
-
-                    <v-row justify="center" class="px-10">
-                        <v-col cols="12" sm="12" md="12" style="margin-bottom:20px;">
-                            <v-checkbox v-model="checkboxInfo" :label="`개인정보 취급방침에 동의합니다.`"
-                                :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
-                            </v-checkbox>
-                            <v-checkbox v-model="checkboxRecevie01" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
-                                dark>
-                            </v-checkbox>
-                            <v-checkbox v-model="checkboxRecevie02" :label="`당봄한의원 진료안내 수신여부`" dark>
-                            </v-checkbox>
-                        </v-col>
-                    </v-row>
-
-                    <v-row class="px-10 pb-10">
-                        <v-col cols="12" sm="12" md="12">
-                            <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
-                                <span class="display-1 yellow--text darken-1 font-weight-black">신청 완료</span></v-btn>
-                        </v-col>
-                    </v-row>
+                </div>
                 
-                    <!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
+                <div><!-- form 정의 -->
+                    <v-form ref="form" v-model="formValid"  class="mt-2" style="background-color: #421869;">
+                        <v-row justify="center" align="center" class="py-5 px-2">
+                            <v-col cols="12"  style="margin-bottom:20px;" class="display-1 yellow--text darken-1 font-weight-black">
+                                전자책 다운로드<br>신청하기!
+                            </v-col>
+                            <v-col cols="12" class="title white--text darken-1">
+                                <말초신경병증 이제 치료합시다.><br>
+                                을 비롯한 전자책 14권                          
+                            </v-col>
+                            <v-col cols="12" class="title white--text darken-1">
+                                지금 바로 다운로드 신청하시면 순차적으로 <br>
+                                카톡이나 이메일로 발송해드립니다. ^^
+                            </v-col>
+                        </v-row>
+
+                        <!-- 이름, 나이, 성별, 연락처, 전자책 선택 -->
+                        <v-row justify="center" align="center" class="px-10">
+                            <v-col cols="12" sm="6" md="6">
+                                <v-text-field solo label="이름" required v-model="name" :rules="nameRules">
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-text-field solo label="나이" required v-model="age">
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-select solo :items="['남', '여']" label="성별" required v-model="sex"
+                                    :rules="[v => !!v || '선택해 주세요.']">
+                                </v-select>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-text-field solo label="연락처" required v-model="tel" :rules="telRules"
+                                    mask="###########">
+                                </v-text-field>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-select solo :items="['카카오톡', '이메일']" label="전자책 수령방법" required v-model="receive"
+                                    :rules="[v => !!v || '선택해 주세요.']">
+                                </v-select>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6" style="margin-bottom:20px;">
+                                <v-text-field v-show = "receive === '이메일' ? true:false" solo label="이메일을 적어주세요" v-model="email">
+                                </v-text-field>
+                            </v-col>
+                        </v-row>
+
+                        <v-row class="display-1 yellow--text darken-1 font-weight-black" justify="center">
+                            신청하는 책
+                        </v-row>
+
+                        <v-row class="px-10" >
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox12" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">말초신경병증 이제 치료합시다.</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox2" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox8" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">비만당뇨 한방치료사례집</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox1" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">마른당뇨 한방치료사례집</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox10" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨약 끊기 당신도 가능합니다.</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox11" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">공복혈당 당뇨약없이 낮추는법</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox9" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">초기당뇨 한방치료사례집</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox5" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨초기 혈당잡기</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox3" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨치료 사례집 I, II</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>         
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox4" class="mx-2" dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨발저림 요당도 치료하자</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                                <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox6" class="mx-2"  dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-checkbox v-model="checkbox7" class="mx-2"  dark>
+                                    <template v-slot:label>
+                                        <strong class="title white--text">당뇨불면증 한방치료사례집</strong>
+                                    </template>
+                                </v-checkbox>
+                            </v-col>
+                        </v-row>
+
+                        <v-row justify="center" class="mb-5 display-1 yellow--text darken-1 font-weight-black">
+                            개인정보 취급방침
+                        </v-row>
+
+                        <v-row justify="center" class="px-10">
+                            <v-textarea solo height="100" v-model="termDoc"/>
+                        </v-row>
+
+                        <v-row justify="center" class="px-10">
+                            <v-col cols="12" sm="12" md="12" style="margin-bottom:20px;">
+                                <v-checkbox v-model="checkboxInfo" :label="`개인정보 취급방침에 동의합니다.`"
+                                    :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
+                                </v-checkbox>
+                                <v-checkbox v-model="checkboxRecevie01" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
+                                    dark>
+                                </v-checkbox>
+                                <v-checkbox v-model="checkboxRecevie02" :label="`당봄한의원 진료안내 수신여부`" dark>
+                                </v-checkbox>
+                            </v-col>
+                        </v-row>
+
+                        <v-row class="px-10 pb-10">
+                            <v-col cols="12" sm="12" md="12">
+                                <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
+                                    <span class="display-1 yellow--text darken-1 font-weight-black">신청 완료</span></v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-form>
+                </div>
+
+                <div><!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
                     <v-row justify="center" class="mt-10">
                         <v-col>  
                             <a href="http://www.arirangdm.com/" target="_blank">
@@ -277,8 +280,7 @@
 
                     <!-- footer -->
                     <v-img src="https://globalarirang.github.io/dangbom/img/pc4.png" class="mx-5">
-
-                </v-form>
+                </div>
             </div>
         </v-app>
     </div>
