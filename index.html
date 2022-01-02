@@ -64,6 +64,20 @@
                         <v-img src="https://firebasestorage.googleapis.com/v0/b/arirang-event.appspot.com/o/images%2Fmain_20220101_merge.jpg?alt=media&token=f983ca73-a0ea-47c9-a0d4-dff2c0421d01">
                     </v-col>
                 </v-row>
+                    
+                <!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
+                <v-row justify="center" class="mt-10">
+                    <v-col>  
+                        <a href="http://www.arirangdm.com/" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/home1.png" >
+                        </a>
+                    </v-col>
+                    <v-col> 
+                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/school_submit.jpeg" >
+                        </a>
+                    </v-col>
+                </v-row>
                
                 <!-- form 정의 -->
                 <v-form ref="form" v-model="formValid"  class="mt-2" style="background-color: #421869;">
@@ -227,27 +241,9 @@
                             <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
                                 <span class="display-1 yellow--text darken-1 font-weight-black">신청 완료</span></v-btn>
                         </v-col>
-                    </v-row>
-                            
-                <!-- 당뇨교육 신청하러가기 -->
-                <v-row justify="center">
-                    <v-col> 
-                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
-                            <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010104.png">
-                        </a>
-                    </v-col> 
-                </v-row>
+                    </v-row>                         
                 </v-form>
-                            
-                 <!-- 당뇨교육 신청하러가기 -->
-                <v-row justify="center">
-                    <v-col> 
-                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
-                            <v-img src="https://globalarirang.github.io/dangbom/img/main_2022010104.png">
-                        </a>
-                    </v-col> 
-                </v-row>
-                
+                                 
                 <!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
                 <v-row justify="center" class="mt-10">
                     <v-col>  
