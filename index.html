@@ -66,10 +66,11 @@
                 </v-row>
              
                 <!-- form 정의 -->
-                <v-form ref="form" v-model="formValid"  class="mt-2" style="background-color: #421869;">
+                <v-form ref="form" v-model="formValid"  class="mt-2">
+                    <div style="background-color: #421869;">
                     <v-row justify="center" align="center" class="py-5 px-2">
                         <v-col cols="12"  style="margin-bottom:20px;" class="display-1 yellow--text darken-1 font-weight-black">
-                            전자책 다운로드<br>신청하기 #
+                            전자책 다운로드<br>신청하기 1
                         </v-col>
                         <v-col cols="12" class="title white--text darken-1">
                             <말초신경병증 이제 치료합시다.><br>
@@ -227,7 +228,18 @@
                             <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
                                 <span class="display-1 yellow--text darken-1 font-weight-black">신청 완료</span></v-btn>
                         </v-col>
-                    </v-row>                         
+                    </v-row>  
+                    </div>
+                        
+                    <!-- 당뇨교육 신청하러가기 -->
+                <v-row justify="center">
+                    <v-col> 
+                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
+                            <v-img src="https://firebasestorage.googleapis.com/v0/b/arirang-event.appspot.com/o/images%2Fschool.png?alt=media&token=4d553fe6-61fe-41bb-8494-093965271571">
+                        </a>
+                    </v-col> 
+                </v-row>
+                        
                 </v-form>
                                  
                 <!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
