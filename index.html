@@ -240,7 +240,7 @@
                             <v-checkbox v-model="checkboxRecevie01" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
                                 dark>
                             </v-checkbox>
-                            <v-checkbox v-model="checkboxRecevie02" :label="`당봄한의원 진료안내 수신여부`" dark>
+                            <v-checkbox v-model="checkboxRecevie02" :label="`해당 책 저술한 의료진과의 상담 수신여부`" dark>
                             </v-checkbox>
                         </v-col>
                     </v-row>       
@@ -286,7 +286,7 @@
         data() {
             return {
                 checkboxRecevie01: false, //## 당뇨소식 수신여부
-                checkboxRecevie02: false, //## 당봄한의원 진료안내 수신여부
+                checkboxRecevie02: false, //## 해당 책 저술한 의료진과의 상담 수신여부
                 checkboxInfo: false, //## 개인정보 취급방침
                 checkbox1: false, //## 마른당뇨 치료사례집
                 checkbox2: false, //## 당뇨발저림 치료사례집
@@ -313,7 +313,7 @@
                 telRules: [v => !!v || '연락처를 입력해 주세요.(숫자만 입력해주세요.)'],         
                 termDoc: `■  수집하는 개인정보의 항목
         당봄한의원은 홈페이지 회원가입, 상담 및 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
-        -수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 이혜민한의사 상담신청, 당봄한의원 당뇨소식 수신여부
+        -수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 해당 책 저술한 의료진과의 상담, 당봄한의원 당뇨소식 수신여부
         -개인정보 수집방법 : 홈페이지 회원가입, 상담 및 서비스 신청
         ■  개인정보의 보유 및 이용기간
         당봄한의원 (이하 ‘본원' 이라 함)은 귀하의 개인정보보호를 매우 중요시하며, 『개인정보보호법』을 준수하고 있습니다.
@@ -474,7 +474,7 @@
                 this.sex = ''
                 this.age = ''
                 this.checkboxRecevie01 = false //## 당뇨소식 수신여부
-                this.checkboxRecevie02 = false //## 당봄한의원 진료안내 수신여부
+                this.checkboxRecevie02 = false //## 해당 책 저술한 의료진과의 상담 수신여부
                 this.checkboxInfo = false //## 개인정보 취급방침
                 this.checkbox1 = false //## 마른당뇨 치료사례집
                 this.checkbox2 = false //## 당뇨발저림 치료사례집
@@ -515,7 +515,7 @@
                 var checkbox12 = "12. 말초신경병증 이제 치료합시다. : " + this.checkbox12 + "\n"
 
                 var checkboxRecevie01 = "# 당뇨소식 수신여부 : " + this.checkboxRecevie01 + "\n"
-                var checkboxRecevie02 = "# 당봄한의원 진료안내 수신여부 : " + this.checkboxRecevie02 + "\n"
+                var checkboxRecevie02 = "# 저술한 의료진과 상담 수신여부 : " + this.checkboxRecevie02 + "\n"
                 var receive = "# 전자책 수령방법 : " + this.receive + "\n"
                 var email = "# 이메일 : " + this.email + "\n"
                 var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + 
