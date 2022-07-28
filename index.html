@@ -61,7 +61,7 @@
                 <!-- 메인이미지 -->
                 <v-row justify="center">
                     <v-col>
-                        <v-img src="https://firebasestorage.googleapis.com/v0/b/arirang-event.appspot.com/o/images%2Fmain_20220101_merge.jpg?alt=media&token=f983ca73-a0ea-47c9-a0d4-dff2c0421d01">
+                        <v-img src="https://globalarirang.github.io/dangbom/img/main_20220728.png">
                     </v-col>
                 </v-row>
                                                                 
@@ -83,7 +83,7 @@
                 <v-row justify="center">
                     <v-col> 
                         <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
-                            <v-img src="https://firebasestorage.googleapis.com/v0/b/arirang-event.appspot.com/o/images%2Fschool.png?alt=media&token=4d553fe6-61fe-41bb-8494-093965271571">
+                            <v-img src="https://globalarirang.github.io/dangbom/img/school.png">
                         </a>
                     </v-col> 
                 </v-row>
@@ -95,8 +95,8 @@
                             전자책 다운로드<br>신청하기
                         </v-col>
                         <v-col cols="12" class="title white--text darken-1">
-                            <말초신경병증 이제 치료합시다.><br>
-                            을 비롯한 전자책 14권                          
+                            <당뇨발저림 치료사례집 I, II><br>
+                            을 비롯한 전자책 15권                          
                         </v-col>
                         <v-col cols="12" class="title white--text darken-1">
                             지금 바로 다운로드 신청하시면 순차적으로 <br>
@@ -139,27 +139,27 @@
 
                     <v-row class="px-10" >
                         <v-col cols="12" sm="6" md="6">
-                            <v-checkbox v-model="checkbox12" class="mx-2" dark>
-                                <template v-slot:label>
-                                    <strong class="title white--text">말초신경병증 이제 치료합시다.</strong>
-                                </template>
-                            </v-checkbox>
-                        </v-col>
-                        <v-col cols="12" sm="6" md="6">
                             <v-checkbox v-model="checkbox2" class="mx-2" dark>
                                 <template v-slot:label>
                                     <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
                                 </template>
                             </v-checkbox>
                         </v-col>
-                            <v-col cols="12" sm="6" md="6">
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox13" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">습담 제거로 뱃살 뺀 이야기</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
                             <v-checkbox v-model="checkbox8" class="mx-2" dark>
                                 <template v-slot:label>
                                     <strong class="title white--text">비만당뇨 한방치료사례집</strong>
                                 </template>
                             </v-checkbox>
                         </v-col>
-                            <v-col cols="12" sm="6" md="6">
+                        <v-col cols="12" sm="6" md="6">
                             <v-checkbox v-model="checkbox1" class="mx-2" dark>
                                 <template v-slot:label>
                                     <strong class="title white--text">마른당뇨 한방치료사례집</strong>
@@ -200,7 +200,14 @@
                                     <strong class="title white--text">당뇨치료 사례집 I, II</strong>
                                 </template>
                             </v-checkbox>
-                        </v-col>         
+                        </v-col>     
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox12" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">말초신경병증 이제 치료합시다.</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>   
                         <v-col cols="12" sm="6" md="6">
                             <v-checkbox v-model="checkbox4" class="mx-2" dark>
                                 <template v-slot:label>
@@ -300,6 +307,7 @@
                 checkbox10: false, //## 당뇨약 끊기 당시도 가능합니다.
                 checkbox11: false, //## 공복혈당 당뇨약없이 낮추는법
                 checkbox12: false, //## 말초신경병증 이제 치료합시다.
+                checkbox13: false, //## 습담 제거로 뱃살 뺀 이야기
 
                 formValid: false,
                 name: '',
@@ -488,6 +496,7 @@
                 this.checkbox10 = false //## 당뇨약 끊기 당신도 가능합니다.
                 this.checkbox11 = false, //## 공복혈당 당뇨약없이 낮추는법
                 this.checkbox12 = false, //## 말초신경병증 이제 치료합시다.
+                this.checkbox13 = false, //##습담 제거로 뱃살 뺀 이야기
 
                 this.$refs.form.validate()
                 this.dialog = true
@@ -513,6 +522,7 @@
                 var checkbox10 = "10. 당뇨약 끊기 당신도 가능합니다. : " + this.checkbox10 + "\n"
                 var checkbox11 = "11. 공복혈당 당뇨약없이 낮추는법: " + this.checkbox11 + "\n"
                 var checkbox12 = "12. 말초신경병증 이제 치료합시다. : " + this.checkbox12 + "\n"
+                var checkbox13 = "13. 습담 제거로 뱃살 뺀 이야기 : " + this.checkbox13 + "\n"
 
                 var checkboxRecevie01 = "# 당뇨소식 수신여부 : " + this.checkboxRecevie01 + "\n"
                 var checkboxRecevie02 = "# 저술한 의료진과 상담 수신여부 : " + this.checkboxRecevie02 + "\n"
@@ -521,7 +531,7 @@
                 var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + 
                                     " ■ " + checkbox1 + " ■ " + checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + 
                                     " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + checkbox8 + " ■ " + checkbox9 + " ■ " + checkbox10 + 
-                                    " ■ " + checkbox11 + " ■ " + checkbox12 +
+                                    " ■ " + checkbox11 + " ■ " + checkbox12 + " ■ " + checkbox13 +
                                     " ■ " + checkboxRecevie01 + " ■ " + checkboxRecevie02 + " ■ " + receive+ " ■ " + email
 
                 //## 해당 url로 전달하기       
