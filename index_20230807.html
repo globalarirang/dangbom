@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:url" content="http://www.arirangdm.co.kr">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes">
+    <meta name="subject" content="당뇨치료하는한의원 당봄한의원!" />
+    <meta name="copyright" content="당봄한의원" />
+    <meta name="title" content="당뇨치료하는한의원 당봄한의원! 당뇨교육 신청" />
+    <meta name="apple-mobile-web-app-title" content="당봄한의원" />
+    <meta name="application-name" content="당봄한의원" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="당뇨병, 당뇨합병증 치료 및 관리 당봄한의원" />
+    <meta name="keywords" content="당뇨한의원, 당뇨한약, 당뇨한방치료, 당봄한의원, 당뇨발저림, 당뇨합병증증세, 당뇨치료,  당뇨관리, 아리랑한의원" />
+    <meta property="og:title"           content="당뇨치료하는한의원 당봄한의원! 당뇨교육 신청"/>
+    <meta property="og:site_name"       content="당봄한의원"/>
+    <meta property="og:type"            content="website"/>
+    <meta property="og:image"           content="http://www.arirangdm.com/thum_img/liwoo/og_img/kakao_og_img_12001582013174.png"/>
+    <meta property="og:image:width" content="1000"/>
+    <meta property="og:image:height" content="525"/>
+    <meta property="og:description"     content="당뇨병, 당뇨합병증 치료 및 관리 당봄한의원"/>
+    <meta name="twitter:card"           content="summary">
+    <meta name="twitter:title"          content="당뇨치료하는한의원 당봄한의원!">
+    <meta name="twitter:site"           content="당봄한의원">
+    <meta name="twitter:image"          content="http://www.arirangdm.com/thum_img/liwoo/og_img/kakao_og_img_12001582013174.png">
+    <meta name="twitter:description"    content="당뇨병, 당뇨합병증 치료 및 관리 당봄한의원">
+   
+    <title>당봄한의원</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+        if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf(
+                "msie") != -1)) {
+            // alert("현재 브라우저에서는 신청이 불가능합니다.\n 크롬, 엣지 브라우저에서 다시 접속해주세요.");
+            window.open("microsoft-edge:http://arirangdm.co.kr/");
+        }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NNS8Q57');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNS8Q57"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="app">
+        <v-app>
+            <div class="container" style="text-align: center;">
+                <!-- 메인이미지 -->
+                <v-row justify="center">
+                    <v-col>
+                        <v-img src="https://globalarirang.github.io/dangbom/img/main_20220728.png">
+                    </v-col>
+                </v-row>
+                                                                
+                <!-- 홈페이지 바로가기, 당뇨교육 신청하러가기 -->
+                <v-row justify="center" class="mt-10">
+                    <v-col>  
+                        <a href="http://www.arirangdm.com/" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/home1.png" >
+                        </a>
+                    </v-col>
+                    <v-col> 
+                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/school_submit.jpeg" >
+                        </a>
+                    </v-col>
+                </v-row>
+                        
+                <!-- 당뇨교육 신청하러가기 -->
+                <v-row justify="center">
+                    <v-col> 
+                        <a href="http://www.arirangdm.com/myreg/myreg9" target="_blank">
+                            <v-img src="https://globalarirang.github.io/dangbom/img/school.png">
+                        </a>
+                    </v-col> 
+                </v-row>
+                    
+                <!-- form 정의 -->
+                <v-form ref="form" v-model="formValid" class="mt-2" style="background-color: #421869;">
+                    <v-row justify="center" align="center" class="py-5 px-2">
+                        <v-col cols="12"  style="margin-bottom:20px;" class="display-1 yellow--text darken-1 font-weight-black">
+                            전자책 다운로드<br>신청하기
+                        </v-col>
+                        <v-col cols="12" class="title white--text darken-1">
+                            <당뇨발저림 치료사례집 I, II><br>
+                            을 비롯한 전자책 15권                          
+                        </v-col>
+                        <v-col cols="12" class="title white--text darken-1">
+                            지금 바로 다운로드 신청하시면 순차적으로 <br>
+                            카톡이나 이메일로 발송해드립니다. ^^
+                        </v-col>
+                    </v-row>
+
+                    <!-- 이름, 나이, 성별, 연락처, 전자책 선택 -->
+                    <v-row justify="center" align="center" class="px-10">
+                        <v-col cols="12" sm="6" md="6">
+                            <v-text-field solo label="이름" required v-model="name" :rules="nameRules">
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-text-field solo label="나이" required v-model="age">
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-select solo :items="['남', '여']" label="성별" required v-model="sex"
+                                :rules="[v => !!v || '선택해 주세요.']">
+                            </v-select>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-text-field solo label="연락처" required v-model="tel" :rules="telRules"
+                                mask="###########">
+                            </v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-select solo :items="['카카오톡', '이메일']" label="전자책 수령방법" required v-model="receive"
+                                :rules="[v => !!v || '선택해 주세요.']">
+                            </v-select>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6" style="margin-bottom:20px;">
+                            <v-text-field v-show = "receive === '이메일' ? true:false" solo label="이메일을 적어주세요" v-model="email">
+                            </v-text-field>
+                        </v-col>
+                    </v-row>
+
+                    <v-row class="display-1 yellow--text darken-1 font-weight-black" justify="center">
+                        신청하는 책
+                    </v-row>
+
+                    <v-row class="px-10" >
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox2" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨발저림 치료사례집 I, II</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox13" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">습담 제거로 뱃살 뺀 이야기</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox8" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">비만당뇨 한방치료사례집</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox1" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">마른당뇨 한방치료사례집</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox10" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨약 끊기 당신도 가능합니다.</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox11" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">공복혈당 당뇨약없이 낮추는법</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox9" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">초기당뇨 한방치료사례집</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox5" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨초기 혈당잡기</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox3" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨치료 사례집 I, II</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>     
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox12" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">말초신경병증 이제 치료합시다.</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>   
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox4" class="mx-2" dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨발저림 요당도 치료하자</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                            <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox6" class="mx-2"  dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨피부 가려움증 한방치료사례집</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="6">
+                            <v-checkbox v-model="checkbox7" class="mx-2"  dark>
+                                <template v-slot:label>
+                                    <strong class="title white--text">당뇨불면증 한방치료사례집</strong>
+                                </template>
+                            </v-checkbox>
+                        </v-col>
+                    </v-row>
+
+                    <v-row justify="center" class="mb-5 display-1 yellow--text darken-1 font-weight-black">
+                        개인정보 취급방침
+                    </v-row>
+
+                    <v-row justify="center" class="px-10">
+                        <v-textarea solo height="100" v-model="termDoc"/>
+                    </v-row>
+
+                    <v-row justify="center" class="px-10">
+                        <v-col cols="12" sm="12" md="12" style="margin-bottom:20px;">
+                            <v-checkbox v-model="checkboxInfo" :label="`개인정보 취급방침에 동의합니다.`"
+                                :rules="[v => !!v || '체크를 하셔야 문의할수 있습니다.']" dark>
+                            </v-checkbox>
+                            <v-checkbox v-model="checkboxRecevie01" :label="`당뇨소식 수신여부 &#13; (1주일에1회. 당뇨소식지를 보내드려요.)`"
+                                dark>
+                            </v-checkbox>
+                            <v-checkbox v-model="checkboxRecevie02" :label="`해당 책 저술한 의료진과의 상담 수신여부`" dark>
+                            </v-checkbox>
+                        </v-col>
+                    </v-row>       
+
+                    <v-row class="px-10 pb-10">
+                        <v-col cols="12" sm="12" md="12">
+                            <v-btn :disabled="!formValid" block class="green" height="100" @click="submit">
+                                <span class="display-1 yellow--text darken-1 font-weight-black">신청 완료</span></v-btn>
+                        </v-col>
+                    </v-row>                
+                </v-form>
+                                                                       
+                <!-- 당뇨관리어플 위시케어 -->
+                <v-row justify="center" class="my-5">
+                    <v-col cols="12" md="4">                    
+                        <v-img contain src="https://globalarirang.github.io/dangbom/img/wish4.png" class="px-10" >
+                    </v-col>
+                    <v-col cols="12" md="4">                    
+                        <a href="https://play.google.com/store/apps/details?id=com.tastylife.wishcare&hl=ko" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/wish2.png" class="px-10" >
+                        </a>
+                    </v-col>
+                    <v-col cols="12" md="4">                    
+                        <a href="https://apps.apple.com/kr/app/%EC%9C%84%EC%8B%9C%EC%BC%80%EC%96%B4-%ED%98%88%EB%8B%B9-%EB%8B%B9%EB%87%A8-%EC%9E%84%EB%8B%B9-%EA%B4%80%EB%A6%AC-%EB%8F%84%EC%9A%B0%EB%AF%B8/id1448689762" target="_blank">
+                            <v-img contain src="https://globalarirang.github.io/dangbom/img/wish3.png" class="px-10" >
+                        </a>
+                    </v-col>
+                </v-row>                          
+
+                <!-- footer -->
+                <v-img src="https://globalarirang.github.io/dangbom/img/pc4.png" class="mx-5">
+            </div>
+        </v-app>
+    </div>
+</body>
+</html>
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data() {
+            return {
+                checkboxRecevie01: false, //## 당뇨소식 수신여부
+                checkboxRecevie02: false, //## 해당 책 저술한 의료진과의 상담 수신여부
+                checkboxInfo: false, //## 개인정보 취급방침
+                checkbox1: false, //## 마른당뇨 치료사례집
+                checkbox2: false, //## 당뇨발저림 치료사례집
+                checkbox3: false, //## 당뇨치료 사례집 I, II
+                checkbox4: false, //## 당뇨발저림 요당도 치료하자
+                checkbox5: false, //## 당뇨초기 혈당잡기
+                checkbox6: false, //## 당뇨피부 가려움증 치료사례집
+                checkbox7: false, //## 당뇨 불면증 한방치료사례집
+                checkbox8: false, //## 비만당뇨 한방치료사례집
+                checkbox9: false, //## 초기당뇨 한방치료사례집
+                checkbox10: false, //## 당뇨약 끊기 당시도 가능합니다.
+                checkbox11: false, //## 공복혈당 당뇨약없이 낮추는법
+                checkbox12: false, //## 말초신경병증 이제 치료합시다.
+                checkbox13: false, //## 습담 제거로 뱃살 뺀 이야기
+
+                formValid: false,
+                name: '',
+                tel: '',
+                sex: '',
+                age: '',
+                receive: '',
+                email: '',
+                age: '',
+                nameRules: [v => !!v || '이름을 입력해 주세요.', v => v.length <= 10 || '10자 이내로 입력해 주세요.'],
+                telRules: [v => !!v || '연락처를 입력해 주세요.(숫자만 입력해주세요.)'],         
+                termDoc: `■  수집하는 개인정보의 항목
+        당봄한의원은 홈페이지 회원가입, 상담 및 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+        -수집항목 : 이름, 연락처, 이메일, 나이, 사는 지역, 당뇨 여부, E-book 수령 방법, 해당 책 저술한 의료진과의 상담, 당봄한의원 당뇨소식 수신여부
+        -개인정보 수집방법 : 홈페이지 회원가입, 상담 및 서비스 신청
+        ■  개인정보의 보유 및 이용기간
+        당봄한의원 (이하 ‘본원' 이라 함)은 귀하의 개인정보보호를 매우 중요시하며, 『개인정보보호법』을 준수하고 있습니다.
+        ‘본원’은 개인정보처리방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다. 
+        이 개인정보처리방침의 순서는 다음과 같습니다.
+
+        1. 수집하는 개인정보의 항목 및 수집방법
+        2. 개인정보의 수집 및 이용목적
+        3. 개인정보의 보유 및 이용기간
+        4. 개인정보의 파기절차 및 그 방법
+        5. 개인정보 제공 및 공유
+        6. 수집한 개인정보의 위탁
+        7. 개인정보의 제3자 제공
+        8. 동의철회 / 회원탈퇴 방법
+        9. 개인정보 자동 수집 장치의 설치/운영 및 그 거부에 관한 사항
+        10. 개인정보관리책임자
+        11. 개인정보의 안전성 확보조치
+        12. 정책 변경에 따른 공지의무
+                        
+        1. 수집하는 개인정보의 항목 및 수집방법
+        ‘본원’은 사이트 회원가입 시 서비스 이용을 위해 필요한 최소한의 개인정보만을 수집합니다. 
+
+        [진료정보]
+        - 필수항목 : 아이디, 별명, 패스워드, 성명, 이메일, 주소, 휴대전화
+        ※ 의료법에 의해 고유식별정보 및 진료정보를 의무적으로 보유하여야 하여야 합니다. (별도 동의 불필요) 
+
+        [회원가입 수집항목]
+        - 선택항목 : 생년월일, 추천인아이디, 전화번호 등
+        - 서비스 이용 과정이나 서비스 제공 업무 처리 과정에서 다음과 같은 정보들이 자동으로 생성되어 수집될 수 있습니다. (서비스 이용기록, 접속 로그, 쿠키, 접속 IP 정보)
+
+        [개인정보 수집방법] 
+        - ‘본원’은 고객이 진료예약 신청, 개인정보변경 등 서면양식 등 ‘본원’에서 운영하는 홈페이지 회원가입, 전화, 팩스, 상담게시판, 이메일, 이벤트 응모를 통해 개인정보를 수집합니다. 또한 인터넷 서비스 사용 시 생성정보 수집 툴, 자가진단을 통한 방법으로도 개인정보를 수집합니다. 
+
+        - 이용자의 개인정보를 수집하는 때에는 이하 각호의 경우를 제외하고는 당해 이용자의 동의를 받습니다. 
+        ① 법률에 특별한 규정이 있는 경우
+        ② 서비스이용계약의 이행을 위해서 필요한 경우
+        ③ 서비스의 제공에 따른 요금정산을 위하여 필요한 경우
+        ④ ’본원’은 개인정보의 보호를 위하여 관리자를 한정하여 그 수를 최소화하며 개인정보의 분실, 도난, 유출, 변조되지 아니하도록 안정성 확보에 필요한 기술적 조치 등을 강구합니다.
+        ⑤ ‘본원’은 개인정보의 수집목적을 달성한 때에는 당해 개인정보를 지체 없이 파기합니다.
+
+        2. 개인정보의 수집 및 이용목적 
+        본원은 수집한 개인정보를 다음의 목적을 위해 활용합니다. 
+        이용자가 제공한 모든 정보는 하기 목적에 필요한 용도 이외로는 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구할 것입니다.
+
+        [진료정보]
+        - 진단 및 치료를 위한 진료서비스와 청구, 수납 및 환급 등의 원무서비스 제공 
+
+        [홈페이지 회원정보] 
+        - 필수정보 : 홈페이지를 통한 진료 예약, 예약조회, 카카오톡상담, 상담문의 및 회원제 서비스 제공
+        - 선택정보 : 문자나 이메일을 통한 ‘본원’소식, 질병정보 등의 안내, 설문조사, E-book 열람 등
+
+        [이용목적]
+        - 이용자에게 원활한 의료정보 제공을 위한 온라인 및 오프라인에서의 공지기능
+        - 사용자 인증 절차 및 ‘본원’내 진료정보서비스 제공
+        - ‘본원’의 홈페이지 원활한 운영 및 통계분석자료로 활용
+
+        - 제공된 개인정보는 당해 이용자의 동의 없이 목적 외 이용이나 제3자에게 제공할 수 없으며, 이에 따른 이용자의 피해에 대한 모든 책임은 ‘본원’이 집니다. 
+        단, 다음의 경우에는 예외로 합니다. 
+        ① 법률에 특별한 규정이 있는 경우
+        ② 서비스의 제공에 따른 요금정산 및 배송 등을 위하여 필요한 경우
+        ③ 통계작성·학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 식별할 수 없는 형태로 제공하는 경우
+
+        - 정보통신서비스제공자로부터 이용자의 개인정보를 제공받은 자는 당해 이용자의 동의가 있거나 다른 법률에 특별한 규정이 있는 경우를 제외하고는 개인정보를 제공받은 목적 외의 용도로 이를 이용하거나 제3자에게 제공하여서는 안 됩니다.
+
+        3. 개인정보의 보유 및 이용기간 및 파기절차 및 파기 방법
+        본원은 개인정보의 수집목적 또는 제공받은 목적이 달성된 때에는 귀하의 개인정보를 지체 없이 파기합니다. 
+
+        [진료정보]
+        - 의료법에 명시된 진료기록 보관 기준에 준하여 보관
+
+        [홈페이지 회원정보] 
+        - 회원가입을 탈퇴하거나 회원에서 제명된 때 
+        다만, 수집목적 또는 제공받은 목적이 달성된 경우에도 상법 등 법령의 규정에 의하여 보존할 필요성이 있는 경우에는 귀하의 개인정보 및 서비스 사용기록을 보유할 수 있습니다.
+        - 설문조사, 행사 등의 목적을 위하여 수집된 경우 : 설문조사, 행사 등이 종료 된 때
+        - 진료서비스의 제공을 위하여 수집된 경우 : 의료법 기준에 준함
+        - 계약 또는 청약철회 등에 관한 기록: 5년 
+        - 대금결제 및 재화 등의 공급에 관한 기록: 5년 
+        - 소비자의 불만 또는 분쟁처리에 관한 기록: 3년 
+        - 표시, 광고에 관한 기록: 12개월 
+        - 사이트 접속에 관한 기록 : 12개월 
+        - 부정이용 방지를 위한 기록 : 60일 
+        - 회원님의 동의를 받아 보유하고 있는 거래정보 등을 회원님께서 열람을 요구하는 경우에는 소정의 본인확인절차를 거친 후 지체 없이 열람, 확인할 수 있도록 조치합니다.
+        다만, 수집 목적 또는 제공받는 목적이 달성된 경우에도 상법 등 법령의 규정에 따라 보존할 필요성이 있는 경우에는 개인정보를 보유할 수 있습니다.
+
+        4. 개인정보의 파기절차 및 그 방법
+        본원은 『개인정보의 수집 및 이용목적』이 달성된 후에는 즉시 파기합니다. 파기절차 및 방법은 다음과 같습니다.
+        [파기절차]
+        이용자가 회원가입 등을 위해 입력한 정보는 목적이 달성된 후 파기방법에 의하여 즉시 파기합니다.
+        [파기방법]
+        전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
+        종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각하여 파기합니다.
+
+        5. 개인정보 제공 및 공유
+        ‘본원’은 귀하의 동의가 있거나 관련법령의 규정에 의한 경우를 제외하고는 어떠한 경우에도 『개인정보의 수집 및 이용목적』에서 고지한 범위를 넘어 귀하의 개인정보를 이용하거나 타인 또는 타기업·기관에 제공하지 않습니다.
+        - 국민건강보험법에 의해 건강보험심사평가원에 요양급여비용 청구를 위한 진료기록 제출
+        - 통계작성·학술연구를 위하여 필요한 경우 특정 개인을 알아볼 수 없는 형태로 가공하여 제공
+        - 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우 제출 등
+
+        6. 수집한 개인정보의 위탁
+        본원은 원활한 업무수행을 위해 외부 전문업체에게 개인정보를 위탁/운영하고 있습니다.
+
+        - 수탁업체 : (주)글로벌아리랑
+        - 위탁업무 내용
+        ▶회원가입과 탈퇴
+        ▶홈페이지운영과 유지보수
+        ▶병원소식 등 이메일 발송
+        - 위탁 개인정보 항목 : 회원가입시 등록된 모든 정보
+        - 개인정보 보유 및 이용기간 : 위탁계약 종료시까지
+
+        7. 개인정보의 제3자 제공
+        ‘본원’은 제 3자에게 개인정보를 제공한 내역이 없습니다.
+        ‘본원’은 회원님의 소중한 개인정보를 안전하게 관리하기 위해 최선을 다하겠습니다.
+
+        8. 동의철회 / 회원탈퇴 방법
+        귀하는 회원가입 시 개인정보의 수집·이용 및 제공에 대해 동의하신 내용을 언제든지 철회하실 수 있습니다. 회원탈퇴는 본원 홈페이지 마이페이지의 『회원탈퇴』를 클릭하여 본인 확인 절차를 거치신 후 직접 회원탈퇴를 하시거나, 개인정보관리책임자로 서면, 전화 또는 Fax 등으로 연락하시면 지체 없이 귀하의 개인정보를 파기하는 등 필요한 조치를 하겠습니다.
+
+        9. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항
+        본원은 귀하의 정보를 수시로 저장하고 찾아내는 ‘쿠키(cookie)’ 등을 운용합니다. 쿠키란 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 본원은 다음과 같은 목적을 위해 쿠키를 사용합니다.
+
+        [쿠키 등 사용 목적]
+        - 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공. 귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서, 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다. 
+        [쿠키 설정 거부 방법]
+        예: 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.
+        설정방법 예(인터넷 익스플로어의 경우)
+        : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보
+        단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.
+
+        10. 개인정보의 관리책임자
+        본원은 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.
+        ■ 개인정보관리책임자 : 손영훈
+        ■ 개인정보보호 실무담당자 : 이혜수
+        ■ 소속부서 : 당봄한의원
+        ■ 전화번호 : 02-959-3396
+        ■ 이메일 : globalarirang1@gmail.com
+
+        귀하께서는 본원의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자로 신고하실 수 있습니다. 본원은 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다. 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
+        개인분쟁조정위원회 (http://www.1336.or.kr / 1336) 
+        정보보호마크인증위원회 (http://www.eprivacy.or.kr / (02) 580-0533~4)
+        대검찰청 사이버범죄수사단 (http://www.spo.go.kr / (02) 3480-3573)
+        경찰청 사이버테러대응센터 (http://www.ctrc.go.kr / (02) 392-0330)
+
+        11. 개인정보의 안전성 확보조치
+        본원은 이용자의 개인정보보호를 위한 기술적 대책으로서 여러 보안장치를 마련하고 있습니다. 이용자께서 제공하신 모든 정보는 방화벽 등 보안장비에 의해 안전하게 보호 / 관리되고 있습니다. 또한 본원은 이용자의 개인정보를 처리하는 인원을 최소한으로 제한하여 지속적인 보안교육을 실시하고 있습니다. 또한 개인정보를 처리하는 시스템의 사용자를 지정하여 사용자 비밀번호를 부여하고 이를 정기적으로 갱신하겠습니다.
+
+        12. 정책 변경에 따른 공지의무
+        이 개인정보취급방침은 2015년 9월 1일에 제정되었으며 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는 변경되는 개인정보취급방침을 시행하기 최소 7일전에 본원 홈페이지를 통해 변경이유 및 내용 등을 공지하도록 하겠습니다.
+        공고일자 : 2015년 9월 22일
+        시행일자 : 2015년 9월 29일
+
+        ※ '본 약관내에는 영리목적 광고성 정보 수신동의에 관한 사항이 포함되어 있습니다.'`
+        }
+        },
+        methods: {
+            showDialog() {
+                //## 값 초기화
+                this.name = ''
+                this.tel = ''
+                this.sex = ''
+                this.age = ''
+                this.checkboxRecevie01 = false //## 당뇨소식 수신여부
+                this.checkboxRecevie02 = false //## 해당 책 저술한 의료진과의 상담 수신여부
+                this.checkboxInfo = false //## 개인정보 취급방침
+                this.checkbox1 = false //## 마른당뇨 치료사례집
+                this.checkbox2 = false //## 당뇨발저림 치료사례집
+                this.checkbox3 = false //## 당뇨치료 사례집 I, II
+                this.checkbox4 = false //## 당뇨발저림 요당도 치료하자
+                this.checkbox5 = false //## 당뇨초기 혈당잡기
+                this.checkbox6 = false //## 당뇨피부 가려움증 치료사례집
+                this.checkbox7 = false //## 당뇨 불면증 한방치료사례집
+                this.checkbox8 = false //## 비만당뇨 한방치료사례집
+                this.checkbox9 = false //## 초기당뇨 한방치료사례집
+                this.checkbox10 = false //## 당뇨약 끊기 당신도 가능합니다.
+                this.checkbox11 = false, //## 공복혈당 당뇨약없이 낮추는법
+                this.checkbox12 = false, //## 말초신경병증 이제 치료합시다.
+                this.checkbox13 = false, //##습담 제거로 뱃살 뺀 이야기
+
+                this.$refs.form.validate()
+                this.dialog = true
+            },
+
+            submit() {
+                if (!this.$refs.form.validate()) {
+                    return;
+                }
+                var name = "이름:" + this.name + "\n"
+                var tel = "연락처:" + this.tel + "\n"
+                var sex = "성별:" + this.sex + "\n"
+                var age = "나이:" + this.age + "\n"
+                var checkbox1 = "1. 마른당뇨 치료사례집 : " + this.checkbox1 + "\n"
+                var checkbox2 = "2. 당뇨발저림 치료사례집 I, II: " + this.checkbox2 + "\n"
+                var checkbox3 = "3. 당뇨치료 한방사례집 I, II : " + this.checkbox3 + "\n"
+                var checkbox4 = "4. 당뇨발저림 요당도 치료하자 : " + this.checkbox4 + "\n"
+                var checkbox5 = "5. 당뇨초기 혈당잡기 : " + this.checkbox5 + "\n"
+                var checkbox6 = "6. 당뇨피부 가려움증 치료사례집 : " + this.checkbox6 + "\n"
+                var checkbox7 = "7. 당뇨 불면증 한방치료사례집 : " + this.checkbox7 + "\n"
+                var checkbox8 = "8. 비만당뇨 한방치료사례집 : " + this.checkbox8 + "\n"
+                var checkbox9 = "9. 초기당뇨 한방치료사례집 : " + this.checkbox9 + "\n"
+                var checkbox10 = "10. 당뇨약 끊기 당신도 가능합니다. : " + this.checkbox10 + "\n"
+                var checkbox11 = "11. 공복혈당 당뇨약없이 낮추는법: " + this.checkbox11 + "\n"
+                var checkbox12 = "12. 말초신경병증 이제 치료합시다. : " + this.checkbox12 + "\n"
+                var checkbox13 = "13. 습담 제거로 뱃살 뺀 이야기 : " + this.checkbox13 + "\n"
+
+                var checkboxRecevie01 = "# 당뇨소식 수신여부 : " + this.checkboxRecevie01 + "\n"
+                var checkboxRecevie02 = "# 저술한 의료진과 상담 수신여부 : " + this.checkboxRecevie02 + "\n"
+                var receive = "# 전자책 수령방법 : " + this.receive + "\n"
+                var email = "# 이메일 : " + this.email + "\n"
+                var submitMessage = " ■ " + name + " ■ " + tel + " ■ " + sex + " ■ " + age + 
+                                    " ■ " + checkbox1 + " ■ " + checkbox2 + " ■ " + checkbox3 + " ■ " + checkbox4 + " ■ " + checkbox5 + 
+                                    " ■ " + checkbox6 + " ■ " + checkbox7 + " ■ " + checkbox8 + " ■ " + checkbox9 + " ■ " + checkbox10 + 
+                                    " ■ " + checkbox11 + " ■ " + checkbox12 + " ■ " + checkbox13 +
+                                    " ■ " + checkboxRecevie01 + " ■ " + checkboxRecevie02 + " ■ " + receive+ " ■ " + email
+
+                //## 해당 url로 전달하기       
+                axios.post('https://asia-northeast1-arirang-event.cloudfunctions.net/email/sendRegData', {
+                    message: submitMessage,
+                }).then(response => {
+                    if (response.status == 200) {
+                        alert("e-book 신청 완료됐습니다. 순차적으로 전달드리겠습니다.");
+                    } else {
+                        alert("전송 중 에러가 발생했습니다. 잠시후 다시 시도해 주세요.");
+                    }
+                }).catch(error => {
+                    console.log(error);
+                    alert("전송 중 에러가 발생했습니다. 잠시후 다시 시도해 주세요.");
+                });
+            }
+        }
+    })
+</script>
